@@ -4,7 +4,7 @@ This is an implementation of extensible hash index in c++.
 
 It has the following features:
 
-1)insert
+1)insert<\b>
 2)remove
 3)find
 4)print
