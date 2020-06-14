@@ -83,54 +83,5 @@ class Bucket {
     //Desc: Destructor
     ~Bucket();
 
-
-      // // Desc: Copy Constructor. (O(N))
-      // ExtensibleHashTable(const PriorityQueue& rhs);
-
-
-      // // Desc: Destructor. (O(N))
-      // //Post: All allocated memory by the class is released.
-      // ~PriorityQueue();
-      //
-      //
-      // // Desc: Returns true if Priority Queue empty. (O(1))
-      // bool isEmpty() const;
-      //
-      //
-      // // Desc: Returns length of the Priority Queue. (O(1))
-      // int getLength() const;
-      //
-      //
-      // // Desc: Inserts x in sorted order. (O(N))
-      // //  Pre: Priority Queue is sorted.
-      // // Post: Priority Queue remains sorted. len is increased by one.
-      // void enqueue(const T& x);
-      //
-      //
-      // // Desc: Removes the element with "highest" priority. (O(1))
-      // //  Pre: Priority Queue not empty.
-      // //       Throws EmptyDataCollectionException if Priority Queue empty.
-      // //Post:  length is decreased by one. PriorityQueue remains sorted
-      // void dequeue() throw(EmptyDataCollectionException);
-      //
-      //
-      // // Desc: Returns the element with the "highest" priority. (O(1))
-      // //  Pre: Priority Queue not empty.
-      // //       Throws EmptyDataCollectionException if Priority Queue empty.
-      // // Post: Priority Queue is unchanged.
-      // T& peek() const throw(EmptyDataCollectionException);
-      //
-      //
-      //
-      // //Description: 'Inline function. Prints the content of PriorityQueue P
-      // friend ostream & operator<< (ostream & os, const PriorityQueue & P){
-      //     //freind function to class. We can get data directly.
-      //     Node<T>* current= P.head;
-      //     while(current){
-      //       os<<current->data<<endl;
-      //       current = current->next;
-      //     }
-      //     return os;
-      // }
-
-}; // PriorityQueue
+      
+ };
