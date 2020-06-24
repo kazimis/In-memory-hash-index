@@ -1,8 +1,7 @@
 /*
  * Bucket.cpp
- * Class Description: This class is used to implement buckets in exstensible hash index.
  * Author: Sarajuddin Kazimi
- * Date June 18, 2020
+ * Date June 12, 2020
 */
 
 #include "Bucket.h"
@@ -76,6 +75,7 @@ Bucket& Bucket :: operator =(const Bucket &rhs){
   return *this;
 }
 
+
 // Desc:  Increment local_depth
 void Bucket::incr_local_depth(){
   local_depth ++;
@@ -126,23 +126,32 @@ bool Bucket::is_full() const{
 }
 
 
-/* Desc:  Insert key to this Bucket.
-   Pre:   Bucket has free space.
-   Post:  free_space is decremented*/
-void Bucket::insert_key(int key){
+/* Desc: check if it is possible to insert key into bucket.
+         prints runtime error if not possible*/
+void Bucket:: try_insert(int key){
   int count = 0;
   for(int i = 0; i < num_el;i++){
     if (arr_keys[i] == key){
       count++;
-    }
-    if(count >= 2){
-      throw std::runtime_error("An attempt to insert identical search key values in bucket "
-                                "which is already filled with identical search key values");
+    }else{
+      break;
     }
   }
+  if(count == capacity){
+    throw std::runtime_error("An attempt to insert identical search key values in bucket "
+                              "which is already filled with identical search key values");
+  }
+}
+
+
+/* Desc:  Insert key to this Bucket.
+   Pre:   Bucket has free space.
+   Post:  free_space is decremented*/
+void Bucket::insert_key(int key){
   arr_keys[num_el] = key;
   num_el++;
 }
+
 
 
 /* Desc:  Split current bucket and into two buckets and distribute keys.
@@ -193,6 +202,5 @@ ostream & operator<<(ostream & os, const Bucket & aBucket) {
 
 //Desc: Destructor
 Bucket::~Bucket(){
-  cout<<"bucket destructor\n";
   delete [] arr_keys;
 }

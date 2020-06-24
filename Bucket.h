@@ -1,6 +1,5 @@
 /*
  * Bucket.h
- * Class Description: This class is used to implement buckets in exstensible hash index.
  * Author: Sarajuddin Kazimi
  * Date June 12, 2020
 */
@@ -63,6 +62,11 @@ class Bucket {
     bool is_full() const;
 
 
+    /* Desc: check if it is possible to insert key into bucket.
+             prints runtime error if not possible*/
+    void try_insert(int key);
+
+
     /* Desc:  Insert key to this Bucket.
        Pre:   Bucket has free space.
        Post:  free_space is decremented */
@@ -79,9 +83,8 @@ class Bucket {
     friend ostream & operator<<(ostream & os, const Bucket & aBucket);
 
 
-
     //Desc: Destructor
     ~Bucket();
 
-      
- };
+
+};
